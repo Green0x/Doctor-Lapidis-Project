@@ -77,7 +77,23 @@ using (var stream = File.Open(fileName, FileMode.Open))
 
                 var MAIN = Helper.MagicToSignature("MAIN");
                 bw.Write(MAIN);
-                bw.Write(MAINSize);
+                bw.Write(32768);
+                for (int i = 0; i < 4096; i++)
+                {
+                    var arrList = list[i];
+                    bw.Write(arrList);
+
+                    var arrList2 = list2[i];
+                    bw.Write(arrList2);
+
+                    var arrList3 = list3[i];
+                    bw.Write(arrList3);
+
+                    var arrList4 = list4[i];
+                    bw.Write(arrList4);
+
+
+                }
 
             }
         }
